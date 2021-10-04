@@ -30,6 +30,7 @@ let $INIT = $RTP.'/init.vim'
 "Standard vimrc Configs
 set path=.,,**
 
+set fileformat=unix
 filetype plugin indent on
 syntax on
 set backspace=indent,eol,start
