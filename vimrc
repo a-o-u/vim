@@ -6,14 +6,12 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin(data_dir.'/plugged')
-  "themes
-  Plug 'joshdick/onedark.vim' "colorscheme onedark
-
   if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax Highlighting
     Plug 'EdenEast/nightfox.nvim' "neovim theme with treesitter support (colorscheme nordfox)
   else
     Plug 'sheerun/vim-polyglot' "Syntax Highlighting
+    Plug 'joshdick/onedark.vim' "colorscheme onedark
   endif
 call plug#end()
 filetype indent off "Side effects of plug#end()
@@ -57,8 +55,12 @@ set formatoptions=tcqj
 set colorcolumn=81,111,121
 
 "Colour Schemes
-"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"set termguicolors
+if !empty(glob(data_dir.'/plugged/onedark.vim'))
+  if has('termguicolors')
+    set termguicolors
+  endif
+  colorscheme onedark
+end
 
 "netrw
 let g:netrw_banner = 0
