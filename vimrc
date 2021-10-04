@@ -11,17 +11,23 @@ call plug#begin(data_dir.'/plugged')
 
   if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax Highlighting
+    Plug 'EdenEast/nightfox.nvim' "neovim theme with treesitter support (colorscheme nordfox)
   else
     Plug 'sheerun/vim-polyglot' "Syntax Highlighting
   endif
 call plug#end()
+filetype indent off "Side effects of plug#end()
+syntax off "Side effects of plug#end()
+
+"Key Mappings
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 "Global variables
-nnoremap <leader>sv :source $MYVIMRC<CR>
 let $RTP=split(&runtimepath, ',')[0]
 let $RC = has('nvim') ? $RTP.'/vimrc' : '$HOME/.vim/vimrc'
 let $INIT = $RTP.'/init.vim'
 
+"Standard vimrc Configs
 set path=.,,**
 
 filetype plugin indent on
@@ -50,9 +56,8 @@ set formatoptions=tcqj
 set colorcolumn=81,111,121
 
 "Colour Schemes
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
-colorscheme onedark
+"let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"set termguicolors
 
 "netrw
 let g:netrw_banner = 0
