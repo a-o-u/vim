@@ -27,6 +27,16 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>b :ls<CR>:b<Space>
 
+"Set global file marks on leave
+"Could be moved to filetype specific command?
+augroup VIMRC
+  autocmd!
+
+  autocmd BufLeave *.css,*.less,*.sass normal! mC
+  autocmd Bufleave *.html,*.htm normal! mH
+  autocmd Bufleave *.ts,*.js normal! mJ
+augroup END
+
 "Standard vimrc Configs
 set path=.,,**
 
