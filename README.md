@@ -2,6 +2,7 @@
 My (Neo)vim config which should be compatible with both Vim and Neovim
 
 ## Todo
+- Netrw configs
 - Status Bar
 - LSP?
 
