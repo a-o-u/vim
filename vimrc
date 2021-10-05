@@ -23,6 +23,8 @@ let $RTP=split(&runtimepath, ',')[0]
 let $RC = has('nvim') ? $RTP.'/vimrc' : '$HOME/.vim/vimrc'
 
 "Key Mappings
+let mapleader=" "
+nnoremap <SPACE> <Nop>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>b :ls<CR>:b<Space>
