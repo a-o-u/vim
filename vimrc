@@ -25,9 +25,14 @@ let $RC = has('nvim') ? $RTP.'/vimrc' : '$HOME/.vim/vimrc'
 "Key Mappings
 let mapleader=" "
 nnoremap <SPACE> <Nop>
+"Quick source vimrc
 nnoremap <leader>sv :source $MYVIMRC<CR>
+"Esc works in terminal mode
 tnoremap <Esc> <C-\><C-n>
+"Fast buffer switch
 nnoremap <leader>b :ls<CR>:b<Space>
+"Clear search highlighting
+nnoremap <leader>h :noh<CR>
 
 "Set global file marks on leave
 "Could be moved to filetype specific command?
