@@ -19,6 +19,7 @@ require('nightfox').setup({
     bg = "#282828",
     comment = "#747369",
     bg_visual = "#303030",
+    bg_highlight = "#343432",
   }
 })
 vim.cmd [[colorscheme nordfox]]
@@ -31,7 +32,7 @@ require('indent_blankline').setup {
   -- show_current_context = true,
   -- context_patterns = {'class', 'function', 'method', 'for_statement'},
 }
-vim.cmd [[highlight IndentBlanklineChar guifg=#363535 gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineChar guifg=#3D3D3D gui=nocombine]]
 vim.cmd [[nnoremap <leader>i :IndentBlanklineToggle!<CR>]]
 EOF
 

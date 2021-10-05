@@ -33,15 +33,26 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <leader>b :ls<CR>:b<Space>
 "Clear search highlighting
 nnoremap <leader>h :noh<CR>
+"Toggle cursorline
+nnoremap <leader>cl :set cursorline!<CR>
 
 "Set global file marks on leave
 "Could be moved to filetype specific command?
-augroup VIMRC
+augroup GlobalFileMarksOnLeave
   autocmd!
 
   autocmd BufLeave *.css,*.less,*.sass normal! mC
   autocmd Bufleave *.html,*.htm normal! mH
   autocmd Bufleave *.ts,*.js normal! mJ
+augroup END
+
+augroup CursorLine
+  autocmd!
+
+  autocmd VimEnter * setlocal cursorline
+  autocmd WinEnter * setlocal cursorline
+  autocmd BufWinEnter * setlocal cursorline
+  autocmd WinLeave * set nocursorline
 augroup END
 
 "Standard vimrc Configs
@@ -55,6 +66,7 @@ set noerrorbells
 set hidden
 set noswapfile
 set ruler
+set cursorline
 
 set number
 set relativenumber
