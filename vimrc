@@ -8,7 +8,8 @@ endif
 call plug#begin(data_dir.'/plugged')
   if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax Highlighting
-    Plug 'EdenEast/nightfox.nvim' "neovim theme with treesitter support (colorscheme nordfox)
+    Plug 'EdenEast/nightfox.nvim' "Neovim theme with treesitter support (colorscheme nordfox)
+    Plug 'lukas-reineke/indent-blankline.nvim' "Indent guides
   else
     Plug 'sheerun/vim-polyglot' "Syntax Highlighting
     Plug 'joshdick/onedark.vim' "colorscheme onedark
