@@ -18,16 +18,21 @@ require('nightfox').setup({
   colors = {
     bg = "#282828",
     comment = "#747369",
-    bg_visual = "#303030",
-    bg_highlight = "#343432",
-  }
+    bg_visual = "#303030", -- colorcolumn
+    bg_highlight = "#343432", -- cursorline
+    fg_gutter = "#5b5b58",
+  },
+  hlgroups = {
+    CursorLineNr = { fg="${white_dm}" },
+  },
 })
 vim.cmd [[colorscheme nordfox]]
 
+-- Indent Guide
 require('indent_blankline').setup {
   char = '┆',
   buftype_exclude = {"terminal"},
-  show_trailing_blankline_indent = false,
+  show_trailing_blankline_indent = false, -- Ident guides don't 'go through' empty lines
   -- Disabled below because doesn't work that well without heaps of configuration
   -- show_current_context = true,
   -- context_patterns = {'class', 'function', 'method', 'for_statement'},
@@ -35,4 +40,3 @@ require('indent_blankline').setup {
 vim.cmd [[highlight IndentBlanklineChar guifg=#3D3D3D gui=nocombine]]
 vim.cmd [[nnoremap <leader>i :IndentBlanklineToggle!<CR>]]
 EOF
-
