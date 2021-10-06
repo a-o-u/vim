@@ -20,10 +20,10 @@ require('nightfox').setup({
     comment = "#747369",
     bg_visual = "#303030", -- colorcolumn
     bg_highlight = "#343432", -- cursorline
-    fg_gutter = "#5b5b58",
+    fg_gutter = "#5b5b58", -- line number color
   },
   hlgroups = {
-    CursorLineNr = { fg="${white_dm}" },
+    CursorLineNr = { fg="${white_dm}" }, -- CURRENT line number color
   },
 })
 vim.cmd [[colorscheme nordfox]]
