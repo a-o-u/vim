@@ -67,6 +67,7 @@ set hidden
 set noswapfile
 set ruler
 set cursorline
+set laststatus=2
 
 set number
 set relativenumber
@@ -94,8 +95,8 @@ if !empty(glob(data_dir.'/plugged/onedark.vim'))
 end
 
 "netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 3
-let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl' "enable line numbers
-let g:netrw_size = 20
+let g:netrw_banner=0
+let g:netrw_liststyle=1
+let g:netrw_browse_split=0
+let g:netrw_bufsettings='noma nomod nu nowrap ro nobl' "enable line numbers
+let g:netrw_sizestyle='h' "setting doesn't work in Windows?
