@@ -39,6 +39,16 @@ nnoremap <leader>cl :set cursorline!<CR>
 "Edit alternate file
 nnoremap <leader><Tab> <C-^>
 
+"Git Key Mappings
+nnoremap <leader>gC :!git commit -am "
+nnoremap <leader>gA :!git commit --amend -am "
+nnoremap <leader>gs :!git status<CR>
+nnoremap <leader>gb :!git branch<CR>:!git checkout 
+nnoremap <leader>gB :!git branch<CR>:!git checkout -b 
+nnoremap <leader>gdb :!git branch<CR>:!git branch -d 
+nnoremap <leader>gP :!git status<CR>:!git push 
+nnoremap <leader>gl :!git log<CR>
+
 "Set global file marks on leave
 "Could be moved to filetype specific command?
 augroup GlobalFileMarksOnLeave
