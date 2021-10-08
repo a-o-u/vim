@@ -32,6 +32,9 @@ local theme = {
   command = {
     a = {bg = colors.yellow_br, fg = colors.black},
   },
+  terminal = {
+    a = {bg = colors.black_br, fg = colors.white},
+  },
   inactive = {
     c = {bg = colors.bg_alt, fg = colors.white_dm},
     x = {bg = colors.bg_alt, fg = colors.white_dm},
