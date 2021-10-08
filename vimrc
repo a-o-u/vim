@@ -36,6 +36,8 @@ nnoremap <leader>b :ls<CR>:b<Space>
 nnoremap <leader>h :noh<CR>
 "Toggle cursorline
 nnoremap <leader>cl :set cursorline!<CR>
+"Edit alternate file
+nnoremap <leader><Tab> <C-^>
 
 "Set global file marks on leave
 "Could be moved to filetype specific command?
