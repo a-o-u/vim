@@ -17,6 +17,7 @@ require('nightfox').setup({
   },
   colors = {
     bg = "#282828",
+    bg_alt = "#212020",
     comment = "#747369",
     bg_visual = "#303030", -- colorcolumn
     bg_highlight = "#343432", -- cursorline
