@@ -39,4 +39,7 @@ require('indent_blankline').setup {
 }
 vim.cmd [[highlight IndentBlanklineChar guifg=#3D3D3D gui=nocombine]]
 vim.cmd [[nnoremap <leader>i :IndentBlanklineToggle!<CR>]]
+
+package.loaded['statusline'] = nil
+require('statusline')
 EOF

@@ -10,6 +10,8 @@ call plug#begin(data_dir.'/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax Highlighting
     Plug 'EdenEast/nightfox.nvim' "Neovim theme with treesitter support (colorscheme nordfox)
     Plug 'lukas-reineke/indent-blankline.nvim' "Indent guides
+    Plug 'kyazdani42/nvim-web-devicons' "Nice looking icons
+    Plug 'shadmansaleh/lualine.nvim' "Status line
   else
     Plug 'sheerun/vim-polyglot' "Syntax Highlighting
     Plug 'joshdick/onedark.vim' "colorscheme onedark
