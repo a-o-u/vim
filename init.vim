@@ -22,13 +22,12 @@ require('nightfox').setup({
     bg_visual = "#303030", -- colorcolumn
     bg_highlight = "#343432", -- cursorline
     fg_gutter = "#5b5b58", -- line number color
-    border = '#000000',
-    border_highlight = '#000000',
   },
   hlgroups = {
     CursorLineNr = { fg="${white_dm}" }, -- CURRENT line number color
     VertSplit = { fg="${bg_alt}", bg="${bg_alt}" },
     StatusLineNc = { bg="${bg_alt}" },
+    SpecialKey = { fg="${bg}", bg="${fg}" },
   },
 })
 vim.cmd [[colorscheme nordfox]]
