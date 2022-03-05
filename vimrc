@@ -5,12 +5,21 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+echo v:version
+
 call plug#begin(data_dir.'/plugged')
+  "Plug 'tmsvg/pear-tree' "Bracket matching (vim) plugin that works for vim and neovim (works nicer with .)
+  Plug 'jiangmiao/auto-pairs' "Bracket matching (vim) plugin that works for vim and neovim
   if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax Highlighting
     Plug 'EdenEast/nightfox.nvim' "Neovim theme with treesitter support (colorscheme nordfox)
     Plug 'lukas-reineke/indent-blankline.nvim' "Indent guides
     Plug 'shadmansaleh/lualine.nvim' "Status line
+    Plug 'neovim/nvim-lspconfig' "Language server/IDE
+    Plug 'hrsh7th/nvim-cmp' "Autocomplete
+    Plug 'hrsh7th/cmp-nvim-lsp' "Support for more autocomplete candidates
+    Plug 'saadparwaiz1/cmp_luasnip' "Snippet source for nvim-cmp
+    Plug 'L3MON4D3/LuaSnip' "Snippets plugin
   else
     Plug 'sheerun/vim-polyglot' "Syntax Highlighting
     Plug 'joshdick/onedark.vim' "colorscheme onedark
@@ -32,12 +41,17 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 tnoremap <Esc> <C-\><C-n>
 "Fast buffer switch
 nnoremap <leader>b :ls<CR>:b<Space>
+"Fast find
+nnoremap <leader>f :find *
 "Clear search highlighting
 nnoremap <leader>h :noh<CR>
 "Toggle cursorline
 nnoremap <leader>cl :set cursorline!<CR>
 "Edit alternate file
 nnoremap <leader><Tab> <C-^>
+"J and K works on wrapped lines
+nnoremap j gj
+nnoremap k gk
 
 "Git Key Mappings
 nnoremap <leader>gC :!git commit -am "
@@ -70,20 +84,15 @@ augroup END
 
 "Standard vimrc Configs
 set path=.,,**
+set noerrorbells
+set hidden
+set noswapfile
 
 set fileformat=unix
 filetype plugin indent on
 syntax on
+set autoread
 set backspace=indent,eol,start
-set noerrorbells
-set hidden
-set noswapfile
-set ruler
-set cursorline
-set laststatus=2
-
-set number
-set relativenumber
 
 set autoindent
 set tabstop=8 "this is default
@@ -91,13 +100,38 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-set smartcase
-set incsearch
+set completeopt=menu,menuone,longest
+set matchpairs+=<:>
 
-set formatoptions=tcqj
+set startofline
 
+set splitbelow
+set splitright
+
+set wildmenu
+set wildmode=longest:full
+
+"Visual
+
+"Current cursor position in the status bar
+set ruler
+set laststatus=2
+"
+"Highlight current line
+set cursorline
+
+"Rulers
 "set colorcolumn=+1,+21,+31
 set colorcolumn=81,111,121
+
+set number
+set relativenumber
+
+set smartcase
+set incsearch
+set hlsearch
+
+set formatoptions=tcqjn
 
 "Colour Schemes
 if !empty(glob(data_dir.'/plugged/onedark.vim'))
