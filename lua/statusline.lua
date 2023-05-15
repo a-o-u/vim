@@ -1,5 +1,6 @@
 local lualine = require('lualine')
-local colors = require('nightfox.colors').load('nordfox')
+local colors = require('nightfox.palette').load('nordfox')
+local spec = require('nightfox.spec').load('nordfox')
 
 -- Component for that gets current window directory
 local function currentDirectory()
@@ -14,30 +15,30 @@ colors.light_gray = '#444b59';
 
 local theme = {
   normal = {
-    a = {bg = colors.green, fg = colors.black},
-    b = {fg = colors.white_dm, bg = colors.gray},
-    c = {fg = colors.violet, bg = colors.bg_alt},
-    x = {fg = colors.white_dm, bg = colors.bg_alt},
+    a = {bg = colors.green.base, fg = colors.black.base},
+    b = {fg = colors.white.dim, bg = colors.gray},
+    c = {fg = colors.violet, bg = colors.bg2},
+    x = {fg = colors.white.dim, bg = colors.bg2},
     z = {bg = colors.purple},
   },
   insert = {
-    a = {bg = colors.cyan_dm, fg = colors.black},
+    a = {bg = colors.cyan.dim, fg = colors.black.base},
   },
   visual = {
-    a = {bg = colors.orange_dm, fg = colors.black},
+    a = {bg = colors.orange.dim, fg = colors.black.base},
   },
   replace = {
-    a = {bg = colors.magenta, fg = colors.black},
+    a = {bg = colors.magenta.base, fg = colors.black.base},
   },
   command = {
-    a = {bg = colors.yellow_br, fg = colors.black},
+    a = {bg = colors.yellow.bright, fg = colors.black.base},
   },
   terminal = {
-    a = {bg = colors.black_br, fg = colors.white},
+    a = {bg = colors.black.bright, fg = colors.white.base},
   },
   inactive = {
-    c = {bg = colors.bg_alt, fg = colors.white_dm},
-    x = {bg = colors.bg_alt, fg = colors.white_dm},
+    c = {bg = colors.bg2, fg = colors.white.dim},
+    x = {bg = colors.bg2, fg = colors.white.dim},
   }
 }
 -- Theme End
@@ -46,7 +47,8 @@ lualine.setup {
   options = {
     icons_enabled = true,
     -- theme = 'gruvbox',
-    theme = theme,
+    -- theme = colors,
+    theme = require("nightfox.util.lualine")("nordfox"),
     component_separators = {left = ' ', right = '|'},
     section_separators = {left = '  ', right = ''},
     disabled_filetypes = {}
@@ -76,9 +78,9 @@ lualine.setup {
         padding = {left = 0, right = 1},
         colored = true,
         diff_color = {
-          added = {fg = colors.git.add},
-          modified = {fg = colors.git.change},
-          removed = {fg = colors.git.delete},
+          added = {fg = spec.git.add},
+          modified = {fg = spec.git.change},
+          removed = {fg = spec.git.delete},
         },
       }
     },

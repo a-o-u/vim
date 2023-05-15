@@ -14,7 +14,7 @@ call plug#begin(data_dir.'/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} "Syntax Highlighting
     Plug 'EdenEast/nightfox.nvim' "Neovim theme with treesitter support (colorscheme nordfox)
     Plug 'lukas-reineke/indent-blankline.nvim' "Indent guides
-    Plug 'shadmansaleh/lualine.nvim' "Status line
+    Plug 'nvim-lualine/lualine.nvim' "Status line
     Plug 'neovim/nvim-lspconfig' "Language server/IDE
     Plug 'hrsh7th/nvim-cmp' "Autocomplete
     Plug 'hrsh7th/cmp-nvim-lsp' "Support for more autocomplete candidates
